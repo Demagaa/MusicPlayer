@@ -1,36 +1,26 @@
 package com.music;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
 
+
+    private List<Music> musicList = new ArrayList<>();
     private int volume;
     private String Name;
 
-    public int getVolume() {
-        return volume;
+    public List<Music> getMusicList() {
+        return musicList;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    private Music music;
-
-    //IoC, empty constructor needed:
-    public MusicPlayer(){ }
-    public MusicPlayer(Music music){ this.music = music; }
-
-    //needs to start with "set":
-    public void setMusic(Music music){ this.music = music; }
-
-    public void playMusic(){
-        System.out.println("Playing: " + music.getSong());
+    public void playMusicList(){
+        for (Music music : musicList){
+            System.out.println("Playing "+ music.getSong());
+        }
     }
 }

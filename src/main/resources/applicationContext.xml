@@ -9,14 +9,25 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="musicBean"
+    <bean id="rockBean"
           class="com.music.RockMusic">
     </bean>
+    <bean id="classicalBean"
+          class="com.music.ClassicalMusic">
+    </bean>
+    <bean id="punkBean"
+          class="com.music.PunkMusic">
+    </bean>
+
     <bean id="musicPlayer"
-          class = "com.music.MusicPlayer"
-    >
-        <property name="music" ref="musicBean"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+          class = "com.music.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="rockBean"/>
+                <ref bean="classicalBean"/>
+                <ref bean="punkBean"/>
+            </list>
+        </property>
+
     </bean>
 </beans>
