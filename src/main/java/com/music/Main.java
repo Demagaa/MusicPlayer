@@ -8,9 +8,9 @@ public class Main {
                 "applicationContext.xml"
         );
         Music music = context.getBean("musicBean", Music.class);
-        //Dependency injection:
 
-        MusicPlayer musicPlayer = new MusicPlayer(music);
+        //Dependency injection:
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
 
         context.close();
