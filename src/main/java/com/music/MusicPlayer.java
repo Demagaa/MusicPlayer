@@ -1,7 +1,15 @@
 package com.music;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author Aleksei Chursin
+ */
+
 
 public class MusicPlayer {
 
@@ -10,11 +18,7 @@ public class MusicPlayer {
     private int volume;
     private String Name;
 
-    public List<Music> getMusicList() {
-        return musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
+    public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
     }
 

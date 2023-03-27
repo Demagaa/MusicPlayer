@@ -2,6 +2,10 @@ package com.music;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author Aleksei Chursin
+ */
+
 public class Main {
     public static void main(String[] args){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
